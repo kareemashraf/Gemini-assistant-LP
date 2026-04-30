@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Payment Successful - Gemini™ AI Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Payment successful for Gemini™ AI Assistant subscription"/>
+    <style>
+        :root {
+            --bg: #07060a;
+            --card-bg: #0f1117;
+            --text: #eaf0ff;
+            --muted: #9aa3bd;
+            --accent1: #6ee7f5;
+            --accent2: #9b7fff;
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glow: 0 8px 30px rgba(107, 114, 128, 0.08);
+            --max-width: 1200px;
+            --radius: 14px;
+            --bg-gradient: radial-gradient(1200px 600px at 10% 10%, rgba(75, 85, 99, 0.06), transparent), radial-gradient(900px 500px at 95% 90%, rgba(155, 127, 255, 0.04), transparent);
+            --primary-btn-text: #071023;
+            color-scheme: dark;
+        }
+
+        html.light-mode {
+            --bg: #f0f4f9;
+            --card-bg: #ffffff;
+            --text: #1c2026;
+            --muted: #5f6c80;
+            --accent1: #0095ad;
+            --accent2: #7a5fff;
+            --glass-bg: rgba(0, 0, 0, 0.03);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --glow: 0 8px 30px rgba(107, 114, 128, 0.12);
+            --bg-gradient: radial-gradient(1200px 600px at 10% 10%, rgba(155, 127, 255, 0.04), transparent), radial-gradient(900px 500px at 95% 90%, rgba(75, 85, 99, 0.06), transparent);
+            --primary-btn-text: #ffffff;
+            color-scheme: light;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;
+            background-color: var(--bg);
+            background-image: var(--bg-gradient);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .wrap {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .btn {
+            -webkit-appearance: none;
+            border: 0;
+            cursor: pointer;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            color: var(--primary-btn-text);
+            box-shadow: 0 6px 28px rgba(155, 127, 255, 0.18), 0 2px 10px rgba(110, 231, 245, 0.06);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--muted);
+        }
+
+        .btn-ghost:hover {
+            background: var(--glass-bg);
+            color: var(--text);
+            border-color: var(--accent1);
+        }
+
+        #theme-toggle {
+            padding: 14px;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer {
+            padding: 40px 0;
+            color: var(--muted);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 24px;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg);
+            z-index: 10;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .top-nav .logo-link {
+            text-decoration: none;
+        }
+
+        .top-nav .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .top-nav .nav-links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .success-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981, #059669);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3);
+        }
+
+        .success-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 0 16px;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .success-message {
+            font-size: 1.2rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 0 30px;
+            line-height: 1.6;
+        }
+
+        .features-list {
+            display: grid;
+            gap: 16px;
+            max-width: 500px;
+            width: 100%;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .feature-item svg {
+            flex-shrink: 0;
+            color: #10b981;
+        }
+    </style>
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            if (theme === 'light') {
+                document.documentElement.classList.add('light-mode');
+            } else {
+                document.documentElement.classList.remove('light-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+<nav class="top-nav wrap">
+    <a href="index.html" class="logo-link">
+        <h3 class="logo"><img src="assets/logo.png" width='28' height='28'/> Gemini™ AI Assistant</h3>
+    </a>
+    <div class="nav-links">
+        <a href="index.html" class="btn btn-ghost">Home</a>
+        <a href="privacy.html" class="btn btn-ghost">Privacy Policy</a>
+        <a href="success.html" class="btn btn-ghost">Success</a>
+        <a href="failed.html" class="btn btn-ghost">Failed</a>
+        <button class="btn btn-ghost" id="theme-toggle" aria-label="Toggle theme">
+            <svg class="sun" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="success-container">
+        <div class="success-icon">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+        
+        <h1 class="success-title">Payment Successful!</h1>
+        <p class="success-message">
+            Thank you for subscribing to Gemini™ AI Assistant. Your payment has been processed successfully and your subscription is now active.
+        </p>
+
+        <div class="features-list">
+            <div class="feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Premium features unlocked</span>
+            </div>
+            <div class="feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Unlimited AI assistance</span>
+            </div>
+            <div class="feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Priority support access</span>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn btn-primary" style="margin-top: 20px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            Back to Home
+        </a>
+    </div>
+</div>
+
+<footer>
+    <div style="padding: 1%;">
+        <div style="padding: 1%;">
+            <span>Protecting your privacy with Highest Industry Standard Security</span>
+        </div>
+        <img src="assets/gdpr.png" width="5%" />
+        <img src="assets/soc.png" width="5%" />
+        <img src="assets/iso27001.png" width="5%" />
+    </div>
+    
+    © <span id="year"></span> Gemini™ Assistant — Built for better browsing. <a href="privacy.html" style="color:var(--muted); text-decoration: none;">Privacy Policy</a>
+</footer>
+
+<script>
+    (function setupThemeToggle() {
+        const toggle = document.getElementById('theme-toggle');
+        const docEl = document.documentElement;
+
+        function updateToggleIcon() {
+            const isLight = docEl.classList.contains('light-mode');
+            if (toggle.querySelector('.sun')) {
+                toggle.querySelector('.moon').style.display = isLight ? 'block' : 'none';
+            }
+            if (toggle.querySelector('.moon')) {
+                toggle.querySelector('.sun').style.display = isLight ? 'none' : 'block';
+            }
+        }
+
+        if (toggle) {
+            toggle.addEventListener('click', () => {
+                docEl.classList.toggle('light-mode');
+                const newTheme = docEl.classList.contains('light-mode') ? 'light' : 'dark';
+                localStorage.setItem('theme', newTheme);
+                updateToggleIcon();
+            });
+            updateToggleIcon();
+        }
+    })();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
