@@ -274,6 +274,10 @@
             Thank you for subscribing to Gemini™ AI Assistant. Your payment has been processed successfully and your subscription is now active.
         </p>
 
+        <div id="user-info" style="display: none; margin-top: 20px; padding: 12px 20px; background: var(--glass-bg); border: 1px solid var(--border-color); border-radius: 12px; max-width: 500px; width: 100%;">
+            <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Account: <span id="user-email" style="color: var(--text); font-weight: 600;"></span></p>
+        </div>
+
         <div class="features-list">
             <div class="feature-item">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -319,6 +323,17 @@
 </footer>
 
 <script>
+    (function displayUserId() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('user_id');
+        if (userId) {
+            const userInfoDiv = document.getElementById('user-info');
+            const userEmailSpan = document.getElementById('user-email');
+            userEmailSpan.textContent = decodeURIComponent(userId);
+            userInfoDiv.style.display = 'block';
+        }
+    })();
+
     (function setupThemeToggle() {
         const toggle = document.getElementById('theme-toggle');
         const docEl = document.documentElement;
